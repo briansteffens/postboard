@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Boards</h2>
+
+<% @boards.each do |board| %>
+  <%= render :partial => 'blurb', :locals => {:board => board} %>
+<% end %>
+
+<% if false %>
+  <td><%= board.url_fragment %></td>
+  <td><%= link_to 'Show', {:action => 'show', :url_fragment => board.url_fragment} %></td>
+  <td><%= link_to 'Edit', edit_board_path(board) %></td>
+  <td><%= link_to 'Destroy', board, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<% end %>

@@ -1,0 +1,83 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+  background-color: #B8CBED;
+  font-family: sans-serif;
+}
+
+#outer {
+  width: 800px;
+  margin: 0px auto 0px auto;
+}
+
+header h1 {
+  color: #A1B8E1;
+}
+
+nav {
+  float: left;
+}
+
+#yield_head {
+  float: right;
+}
+
+#content {
+  padding: 15px 30px 15px 30px;
+  background-color: #CFDDF5;
+}
+
+#content h2 {
+  color: #666666;
+}
+
+.post {
+  background-color: #E5EDFB;
+  padding: 11px 17px 11px 17px;
+  margin-bottom: 7px;
+}
+
+.delete_post_container {
+  text-align: right;
+}
+
+header a.title_link {
+  font-size: 2em;
+}
+
+.board {
+  background-color: #E5EDFB;
+  margin-bottom: 7px;
+  padding: 5px 9px 5px 9px;
+}
+
+.board a {
+  font-size: 1.3em;
+}
+
+.board .description {
+  font-style: italic;
+  padding-left: 17px;
+}
+
+textarea {
+  width: 99%;
+}
+
+.clear_both {
+  clear: both;
+}

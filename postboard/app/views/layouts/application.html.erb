@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Postboard</title>
+  <%= stylesheet_link_tag 'application', media: 'all',
+                          'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="outer">
+    <header>
+      <%= link_to 'Postboard', {:controller => 'boards', :action => 'index'},
+                  class: 'title_link' %>
+      <br />
+      <nav>
+        <%= link_to 'New Board', {:controller => 'boards', :action => 'new'} %>
+      </nav>
+
+      <div id="yield_head">
+        <%= yield :head %>
+      </div>
+
+      <div class="clear_both"></div>
+    </header>
+    <div id="content">
+      <%= yield %>
+    </div>
+  </div>
+</body>
+</html>

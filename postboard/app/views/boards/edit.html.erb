@@ -1,0 +1,8 @@
+<% content_for :head do %>
+  <%= link_to 'Delete Board', {:action => 'destroy', :id => @board.id},
+              :method => 'delete', data: {confirm: "Are you sure?"} %>
+<% end %>
+
+<h2>Editing Board</h2>
+
+<%= render 'form' %>

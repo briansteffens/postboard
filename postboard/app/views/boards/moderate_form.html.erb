@@ -1,0 +1,13 @@
+<%= form_tag(:controller => 'boards', :action => 'moderate', :method => 'post') do |f| %>
+
+  <div class="field">
+    Enter moderator password for
+    <%= link_to '/b/' + @board.url_fragment,
+                {:action => 'show', :url_fragment => @board.url_fragment} %>
+    <br />
+
+    <%= password_field_tag %>
+  </div>
+
+  <%= submit_tag 'Moderate' %>
+<% end %>

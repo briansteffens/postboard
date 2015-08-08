@@ -1,0 +1,30 @@
+<%= render :partial => 'blurb', :locals => {:board => @board} %>
+
+<% content_for :head do %>
+  <div class="edit_controls">
+    <% if !@is_mod %>
+      <%= link_to 'Moderate', {:action => 'moderate'} %>
+    <% else %>
+      <%= link_to 'Edit', {:action => 'edit', :id => @board.id},
+                  :method => 'get' %>
+      <%= link_to 'Stop Moderating', {:action => 'end_moderate',
+                                      :id => @board.id} %>
+      <div class="clear_both"></div>
+    <% end %>
+  </div>
+<% end %>
+
+<%= render :partial => 'post' %>
+
+<% @board.post.each do |post| %>
+  <div class="post">
+    <%= post.body %>
+
+    <% if @is_mod %>
+      <div class="delete_post_container">
+        <%= button_to 'Delete', {:controller => 'posts', :action => 'destroy',
+                                 :id => post.id}, :method => 'delete' %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,8 @@
+<div class="board">
+  <%= link_to '/b/' + board.url_fragment,
+              {:action => 'show', :url_fragment => board.url_fragment} %>
+
+  <div class="description">
+    <%= board.description %>
+  </div>
+</div>
