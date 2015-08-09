@@ -14,6 +14,21 @@ class ready {
 
 class { 'ready': }
 
+# Install Apache for reverse proxying on port 80.
+class { 'apache':
+  default_vhost => false,
+  require => Class['ready'],
+}
+
+class { 'apache::mod::proxy': }
+class { 'apache::mod::proxy_http': }
+
+apache::vhost { 'postboard.vm':
+  port => '80',
+  docroot => '/var/www/',
+  rewrites => [{ rewrite_rule => ['^/(.*)$ http://localhost:3000/$1 [P]']}],
+}
+
 # Install MySQL
 class { "::mysql::server":
   require => Class['ready'],
