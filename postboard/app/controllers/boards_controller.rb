@@ -79,6 +79,23 @@ class BoardsController < ApplicationController
     redirect_to :action => 'show', :url_fragment => @board.url_fragment
   end
 
+  def render_post_body(body)
+    '' if body.nil?
+
+    require 'uri'
+
+    URI.extract(body, ['http', 'https']).each do |url|
+      body.gsub! url, '<a href="'+url+'" target="_blank">'+url+'</a>'
+    end
+
+    body.gsub! "\r\n", "\n"
+    body.gsub! "\n", "<br />"
+
+    body
+  end
+
+  helper_method :render_post_body
+
   private
     def board_params
       params.require(:board).permit(:url_fragment, :password, :is_listed,

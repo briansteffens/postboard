@@ -16,7 +16,7 @@
 
 <% @board.post.each do |post| %>
   <div class="post">
-    <%= post.body %>
+    <%= render_post_body(post.body).html_safe %>
 
     <% if @is_mod %>
       <div class="delete_post_container">
