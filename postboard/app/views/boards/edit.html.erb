@@ -1,5 +1,5 @@
 <% content_for :head do %>
-  <%= link_to 'Delete Board', {:action => 'destroy', :id => @board.id},
+  <%= link_to 'Delete Board', {:action => 'destroy'},
               :method => 'delete', data: {confirm: "Are you sure?"} %>
 <% end %>
 

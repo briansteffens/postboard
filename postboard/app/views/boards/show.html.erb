@@ -5,10 +5,8 @@
     <% if !@is_mod %>
       <%= link_to 'Moderate', {:action => 'moderate'} %>
     <% else %>
-      <%= link_to 'Edit', {:action => 'edit', :id => @board.id},
-                  :method => 'get' %>
-      <%= link_to 'Stop Moderating', {:action => 'end_moderate',
-                                      :id => @board.id} %>
+      <%= link_to 'Edit', {:action => 'edit'}, :method => 'get' %>
+      <%= link_to 'Stop Moderating', {:action => 'end_moderate'} %>
       <div class="clear_both"></div>
     <% end %>
   </div>
