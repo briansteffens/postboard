@@ -2,6 +2,7 @@ Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
   config.vm.hostname = "postboard.vm"
   config.vm.network "forwarded_port", guest: 3000, host: 9090
+  config.vm.network "public_network", :mac => 'AA7777777734'
 
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--memory", 1024]
